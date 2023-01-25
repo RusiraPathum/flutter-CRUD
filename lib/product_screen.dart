@@ -51,6 +51,8 @@ class _ProductScreenState extends State<ProductScreen> {
           product.quantity = int.parse(_quantityController.text);
 
           DBHelper.instance.insertProduct(product).then((value) {});
+
+          Navigator.pop(context);
         }
       },
       child: Text('Save'),

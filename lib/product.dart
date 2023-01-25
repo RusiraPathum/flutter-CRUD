@@ -11,7 +11,7 @@ class Product {
   //     required this.quantity});
 
   // from map Map => Product object
-  static Product fromMap(Map<String, dynamic> query) {
+  static Product fromMap(Map<dynamic, dynamic> query) {
     // Product product = Product(id: 0, name: '', price: '', quantity: 0);
     Product product = Product();
 
@@ -34,7 +34,7 @@ class Product {
   }
 
   // from map list ----- Map List => Product List
-  static List<Product> fromMapList(List<Map<String, dynamic>> query) {
+  static List<Product> fromMapList(List<Map<dynamic, dynamic>> query) {
     List<Product> products = [];
 
     for (Map mp in query) {
