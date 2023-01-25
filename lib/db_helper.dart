@@ -60,4 +60,22 @@ class DBHelper {
     print(maps);
     return Product.fromMapList(maps);
   }
+
+  Future<Product> updateProduct(Product product) async {
+    Database db = await instance.database;
+
+    await db.update(_tableProducts, Product.toMap(product),
+        where: 'id = ?', whereArgs: [product.id]);
+
+    return product;
+  }
+
+  Future deleteProduct(Product product) async {
+    Database db = await instance.database;
+
+    var deleteProduct =
+        db.delete(_tableProducts, where: 'id = ?', whereArgs: [product.id]);
+
+    return deleteProduct;
+  }
 }
